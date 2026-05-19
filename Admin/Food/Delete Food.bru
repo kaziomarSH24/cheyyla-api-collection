@@ -1,0 +1,34 @@
+meta {
+  name: Delete Food
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{baseIP_url}}/v1/foods/:foodId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  foodId: 2
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:multipart-form {
+  name: ABCD
+  category_id: 1
+  description: {{$randomCatchPhraseDescriptor}}
+  price: 199.9
+  stock: 5
+  ~image: @file(C:\Users\kazio\OneDrive\Pictures\134155972230871914.jpg)
+  ~status:  @contentType(available,unavailable)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

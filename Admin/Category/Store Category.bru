@@ -1,0 +1,25 @@
+meta {
+  name: Store Category
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseIP_url}}/v1/categories
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:multipart-form {
+  name: Breakfast45454
+  image: @file(C:\Users\kazio\OneDrive\Pictures\image_2.jpg)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

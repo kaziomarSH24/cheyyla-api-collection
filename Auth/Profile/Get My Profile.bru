@@ -16,7 +16,11 @@ headers {
 }
 
 auth:bearer {
-  token: {{auth_token}}
+  token: {{adminToken}}
+}
+
+vars:pre-request {
+  base_url: http://10.10.10.55:60/api
 }
 
 settings {

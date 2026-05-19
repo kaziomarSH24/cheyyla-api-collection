@@ -1,0 +1,29 @@
+meta {
+  name: Get Category by ID
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseIP_url}}/v1/categories/:categoryId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  categoryId: 3
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:multipart-form {
+  name: lunch
+  image: @file(C:\Users\kazio\OneDrive\Pictures\image_2.jpg)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

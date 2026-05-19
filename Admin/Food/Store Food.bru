@@ -1,0 +1,30 @@
+meta {
+  name: Store Food
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseIP_url}}/v1/foods
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:multipart-form {
+  category_id: 1
+  description: {{$randomCatchPhraseDescriptor}}
+  price: 99.9
+  stock: 5
+  image: @file(C:\Users\kazio\OneDrive\Pictures\134155972230871914.jpg)
+  name: ABC
+  ~status:  @contentType(available,unavailable)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
