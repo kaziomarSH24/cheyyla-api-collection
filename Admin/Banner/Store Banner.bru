@@ -1,11 +1,11 @@
 meta {
-  name: Store Food
+  name: Store Banner
   type: http
   seq: 2
 }
 
 post {
-  url: {{baseIP_url}}/v1/foods
+  url: {{baseIP_url}}/v1/banners
   body: multipartForm
   auth: bearer
 }
@@ -15,13 +15,9 @@ auth:bearer {
 }
 
 body:multipart-form {
-  name: ABCD
-  category_id: 1
-  description: {{$randomCatchPhraseDescriptor}}
-  price: 99.9
-  stock: 5
+  title: Spring Festival Sale
+  status: active
   image: @file(C:\Users\kazio\OneDrive\Pictures\134155972230871914.jpg)
-  ~status:  @contentType(available,unavailable)
 }
 
 settings {

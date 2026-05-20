@@ -1,0 +1,27 @@
+meta {
+  name: Store Offer
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseIP_url}}/v1/offers
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+    "title": "Summer Special",
+    "status": "active"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

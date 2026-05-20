@@ -1,20 +1,17 @@
 meta {
-  name: Get All Food
+  name: Get All Banners
   type: http
   seq: 1
 }
 
 get {
-  url: {{baseIP_url}}/v1/foods?include=category
+  url: {{baseIP_url}}/v1/banners
   body: none
   auth: inherit
 }
 
 params:query {
-  include: category
   ~filter[search]: 
-  ~filter[name]: 
-  ~filter[category_id]: 
   ~filter[status]: 
 }
 

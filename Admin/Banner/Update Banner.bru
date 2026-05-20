@@ -1,0 +1,27 @@
+meta {
+  name: Update Banner
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseIP_url}}/v1/banners/1
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:multipart-form {
+  _method: PUT
+  title: End of Season Sale
+  status: active @contentType(active, inactive)
+  ~image: @file(path/to/your/new_image.jpg)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

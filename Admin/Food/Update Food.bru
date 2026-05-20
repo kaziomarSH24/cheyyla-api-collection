@@ -4,10 +4,14 @@ meta {
   seq: 3
 }
 
-post {
-  url: {{baseIP_url}}/v1/foods
+put {
+  url: {{baseIP_url}}/v1/foods/:foodId
   body: multipartForm
   auth: bearer
+}
+
+params:path {
+  foodId: 2
 }
 
 auth:bearer {
@@ -18,9 +22,9 @@ body:multipart-form {
   name: ABCD
   category_id: 1
   description: {{$randomCatchPhraseDescriptor}}
-  price: 99.9
+  price: 199.9
   stock: 5
-  image: @file(C:\Users\kazio\OneDrive\Pictures\134155972230871914.jpg)
+  ~image: @file(C:\Users\kazio\OneDrive\Pictures\134155972230871914.jpg)
   ~status:  @contentType(available,unavailable)
 }
 

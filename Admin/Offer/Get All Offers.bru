@@ -1,21 +1,22 @@
 meta {
-  name: Get All Food
+  name: Get All Offers
   type: http
   seq: 1
 }
 
 get {
-  url: {{baseIP_url}}/v1/foods?include=category
+  url: {{baseIP_url}}/v1/offers
   body: none
-  auth: inherit
+  auth: bearer
 }
 
 params:query {
-  include: category
   ~filter[search]: 
-  ~filter[name]: 
-  ~filter[category_id]: 
   ~filter[status]: 
+}
+
+auth:bearer {
+  token: {{adminToken}}
 }
 
 settings {
