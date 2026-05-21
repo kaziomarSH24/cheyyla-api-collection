@@ -1,0 +1,32 @@
+meta {
+  name: Checkout
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseIP_url}}/v1/checkout
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{customerToken}}
+}
+
+body:multipart-form {
+  items[0][food_id]: 1
+  items[0][quantity]: 2
+  items[0][plan_type]: regular
+  items[1][food_id]: 5
+  items[1][quantity]: 1
+  items[1][plan_type]: weekly
+  items[2][food_id]: 8
+  items[2][quantity]: 3
+  items[2][plan_type]: regular
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

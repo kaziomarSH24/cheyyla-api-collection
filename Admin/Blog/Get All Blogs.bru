@@ -1,0 +1,19 @@
+meta {
+  name: Get All Blogs
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseIP_url}}/v1/blogs?include=category
+  body: none
+  auth: inherit
+}
+
+params:query {
+  include: category
+  ~filter[search]: 
+  ~filter[status]: 
+  ~filter[title]: 
+  ~filter[category_id]: 
+}

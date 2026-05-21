@@ -1,0 +1,23 @@
+meta {
+  name: Store Blog
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseIP_url}}/v1/blogs
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:multipart-form {
+  title: 10 Benefits of Healthy Eating
+  category_id: 2
+  content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is a detailed blog post content.
+  status: active
+  image: @file(C:\Users\kazio\OneDrive\Pictures\image_2.jpg)
+}
