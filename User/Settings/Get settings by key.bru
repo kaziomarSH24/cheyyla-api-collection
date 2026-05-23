@@ -1,0 +1,15 @@
+meta {
+  name: Get settings by key
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://10.10.10.55:60/api
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

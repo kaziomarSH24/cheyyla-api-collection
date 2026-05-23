@@ -7,7 +7,11 @@ meta {
 post {
   url: {{baseIP_url}}/v1/addresses
   body: json
-  auth: inherit
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{customerToken}}
 }
 
 body:json {

@@ -1,15 +1,20 @@
 meta {
-  name: Get User Addresses
+  name: Get Orders
   type: http
   seq: 2
 }
 
 get {
-  url: {{baseIP_url}}/v1/addresses
+  url: {{baseIP_url}}/v1/orders
   body: none
   auth: bearer
 }
 
 auth:bearer {
   token: {{customerToken}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
 }

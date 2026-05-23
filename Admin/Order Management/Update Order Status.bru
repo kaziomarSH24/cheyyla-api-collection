@@ -1,0 +1,25 @@
+meta {
+  name: Update Order Status
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseIP_url}}/v1/admin/orders/1/status
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+    "status": "processing"
+  }
+}
+
+body:multipart-form {
+  status: processing @contentType(pending,processing,completed,cancelled)
+}

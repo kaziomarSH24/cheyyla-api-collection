@@ -1,0 +1,25 @@
+meta {
+  name: Get Order by ID
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseIP_url}}/v1/admin/orders/1/
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+    "status": "processing"
+  }
+}
+
+body:multipart-form {
+  status: processing @contentType(pending,processing,completed,cancelled)
+}

@@ -1,0 +1,22 @@
+meta {
+  name: Get All Orders
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseIP_url}}/v1/admin/orders?filter[status]=processing
+  body: none
+  auth: bearer
+}
+
+params:query {
+  filter[status]: processing
+  ~filter[order_number]: ORD-1021
+  ~filter[customer]: John
+  ~filter[food]: Burger
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}

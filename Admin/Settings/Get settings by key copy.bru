@@ -1,0 +1,20 @@
+meta {
+  name: Get settings by key copy
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseIP_url}}/v1/settings/:key
+  body: none
+  auth: inherit
+}
+
+params:path {
+  key: privacy_policy
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

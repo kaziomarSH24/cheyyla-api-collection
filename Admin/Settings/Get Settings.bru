@@ -1,21 +1,17 @@
 meta {
-  name: Get Category
+  name: Get Settings
   type: http
   seq: 1
 }
 
 get {
-  url: {{baseIP_url}}/v1/categories?include=foods
+  url: {{baseIP_url}}/v1/admin/settings
   body: none
   auth: bearer
 }
 
-params:query {
-  include: foods
-}
-
 auth:bearer {
-  token: 
+  token: {{adminToken}}
 }
 
 settings {

@@ -1,0 +1,20 @@
+meta {
+  name: Order Cancel
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseIP_url}}/v1/orders/1/cancel
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{customerToken}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
