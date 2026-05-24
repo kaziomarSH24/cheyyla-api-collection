@@ -5,13 +5,13 @@ meta {
 }
 
 get {
-  url: {{baseIP_url}}/v1/categories?include=foods
+  url: {{baseIP_url}}/v1/categories
   body: none
   auth: bearer
 }
 
 params:query {
-  include: foods
+  ~include: foods
 }
 
 auth:bearer {
