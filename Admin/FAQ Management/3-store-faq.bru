@@ -1,0 +1,28 @@
+meta {
+  name: Store FAQ
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseIP_url}}/v1/faqs
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+    "question": "What is your return policy?",
+    "answer": "You can return items within 7 days of delivery.",
+    "is_active": true
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

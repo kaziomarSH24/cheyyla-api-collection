@@ -1,0 +1,20 @@
+meta {
+  name: Get All FAQs
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseIP_url}}/v1/faqs
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~filter[search]: how to
+  ~filter[is_active]: 1
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
