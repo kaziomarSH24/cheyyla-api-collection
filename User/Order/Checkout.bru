@@ -15,9 +15,13 @@ auth:bearer {
 }
 
 body:multipart-form {
-  items[1][food_id]: 1
+  items[1][food_id]: 3
   items[1][quantity]: 3
   items[1][plan_type]: regular
+  card_number: 4111111111111111
+  exp_month: 12
+  exp_year: 2026
+  cvv: 123
   ~items[0][food_id]: 2
   ~items[0][quantity]: 1
   ~items[0][plan_type]: weekly

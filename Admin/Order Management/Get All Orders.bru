@@ -5,13 +5,13 @@ meta {
 }
 
 get {
-  url: {{baseIP_url}}/v1/admin/orders?filter[status]=processing
+  url: {{baseIP_url}}/v1/admin/orders
   body: none
   auth: bearer
 }
 
 params:query {
-  filter[status]: processing
+  ~filter[status]: processing
   ~filter[order_number]: ORD-1021
   ~filter[customer]: John
   ~filter[food]: Burger

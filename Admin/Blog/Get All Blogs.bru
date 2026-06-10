@@ -5,13 +5,15 @@ meta {
 }
 
 get {
-  url: {{baseIP_url}}/v1/blogs?include=category
+  url: {{baseIP_url}}/v1/blogs?include=category&per_page=2&page=2
   body: none
   auth: inherit
 }
 
 params:query {
   include: category
+  per_page: 2
+  page: 2
   ~filter[search]: 
   ~filter[status]: 
   ~filter[title]: 
