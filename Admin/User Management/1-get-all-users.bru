@@ -5,13 +5,13 @@ meta {
 }
 
 get {
-  url: {{baseIP_url}}/v1/admin/users?filter[search]=John
+  url: {{baseIP_url}}/v1/admin/users
   body: none
   auth: bearer
 }
 
 params:query {
-  filter[search]: John
+  ~filter[search]: John
   ~filter[status]: active
 }
 

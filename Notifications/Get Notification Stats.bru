@@ -5,13 +5,13 @@ meta {
 }
 
 get {
-  url: {{base_url}}/v1/notifications/stats
+  url: {{baseIP_url}}/v1/notifications/stats
   body: none
   auth: bearer
 }
 
 auth:bearer {
-  token: {{super_adminToken}}
+  token: {{customerToken}}
 }
 
 settings {

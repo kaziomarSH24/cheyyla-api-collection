@@ -5,12 +5,13 @@ meta {
 }
 
 get {
-  url: {{baseIP_url}}/v1/foods
+  url: {{baseIP_url}}/v1/foods?per_page=5
   body: none
   auth: bearer
 }
 
 params:query {
+  per_page: 5
   ~include: category
   ~filter[search]: 
   ~filter[name]: 

@@ -11,7 +11,7 @@ post {
 }
 
 params:path {
-  orderId: 13
+  orderId: 20
 }
 
 auth:bearer {
@@ -25,7 +25,7 @@ body:json {
 }
 
 body:multipart-form {
-  amount: 99 @contentType(if not provide any it will be fully refund )
+  amount: 25 @contentType(if not provide any it will be fully refund )
 }
 
 settings {
