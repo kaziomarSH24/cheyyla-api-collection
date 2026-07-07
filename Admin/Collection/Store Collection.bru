@@ -1,0 +1,27 @@
+meta {
+  name: Store Collection
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseIP_url}}/v1/collections
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{admin_token}}
+}
+
+body:json {
+  {
+    "name": "New Collection",
+    "status": "active"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

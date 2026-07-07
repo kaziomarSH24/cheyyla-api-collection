@@ -1,0 +1,27 @@
+meta {
+  name: Update Collection
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseIP_url}}/v1/collections/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{admin_token}}
+}
+
+body:json {
+  {
+    "name": "Updated Collection",
+    "status": "inactive"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -5,11 +5,19 @@ meta {
 }
 
 post {
-  url: http://10.10.10.55:60/api/v1/contact-us
-  body: none
+  url: {{baseIP_url}}/v1/contact-us
+  body: multipartForm
   auth: inherit
+}
+
+body:multipart-form {
+  full_name: Omar
+  email: softeng.kaziomar@gmail.com
+  subject: Order delay issue
+  message: 
 }
 
 settings {
   encodeUrl: true
+  timeout: 0
 }

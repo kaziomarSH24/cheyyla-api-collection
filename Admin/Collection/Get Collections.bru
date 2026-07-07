@@ -1,17 +1,17 @@
 meta {
-  name: Order Cancel
+  name: Get Collections
   type: http
-  seq: 4
+  seq: 1
 }
 
-put {
-  url: {{baseIP_url}}/v1/orders/44/cancel
+get {
+  url: {{baseIP_url}}/v1/collections
   body: none
   auth: bearer
 }
 
 auth:bearer {
-  token: {{customerToken}}
+  token: {{admin_token}}
 }
 
 settings {
