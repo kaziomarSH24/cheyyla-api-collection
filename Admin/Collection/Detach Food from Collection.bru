@@ -1,0 +1,26 @@
+meta {
+  name: Detach Food from Collection
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseIP_url}}/v1/collections/1/foods/detach
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{admin_token}}
+}
+
+body:json {
+  {
+    "food_ids": [5]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
