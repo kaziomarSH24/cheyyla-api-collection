@@ -5,16 +5,16 @@ meta {
 }
 
 get {
-  url: {{baseIP_url}}/v1/foods?per_page=5
+  url: {{baseIP_url}}/v1/foods?per_page=5&includes=category,variants,variantsCounts&filter[search]=&filter[name]=Mushroom Burger
   body: none
   auth: bearer
 }
 
 params:query {
   per_page: 5
-  ~include: category
-  ~filter[search]: 
-  ~filter[name]: 
+  includes: category,variants,variantsCounts
+  filter[search]: 
+  filter[name]: Mushroom Burger
   ~filter[category_id]: 
   ~filter[status]: 
   ~filter[price]: 
