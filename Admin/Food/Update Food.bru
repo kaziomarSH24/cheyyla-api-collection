@@ -20,8 +20,8 @@ auth:bearer {
 
 body:multipart-form {
   status: unavailable @contentType(available,unavailable)
-  ~name: ABCD
-  ~category_id: 1
+  name: ABCD
+  category_id: 1
   ~description: {{$randomCatchPhraseDescriptor}}
   ~price: 199.9
   ~stock: 5
@@ -35,6 +35,7 @@ body:multipart-form {
   ~variants[0][option1]: Veggie
   ~variants[0][option2]: Pancakes
 }
+
 settings {
   encodeUrl: true
   timeout: 0
